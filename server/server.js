@@ -5,6 +5,7 @@ require('../database/db');
 const authRoutes = require('./routes/authRoutes');
 const taskRouter = require('./routes/taskRoutes');
 const morgan = require('morgan');
+const path = require('path')
 
 
 app.use(cors());
@@ -16,6 +17,8 @@ app.use('/task', taskRouter);
 // localhost:4000/auth/register
 
 const port = 4000;
+
+app.use(express.static(path.join(__dirname + "/public")))
 
 app.listen(port, () => {
 	console.log(`server is running on port`, port);
