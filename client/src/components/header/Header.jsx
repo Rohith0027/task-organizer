@@ -20,7 +20,7 @@ const Header = () => {
 		<div>
 			<nav className='header'>
 				<div className='header__logo'>
-					<h5>Task Manager</h5>
+					<h5>Task Organizer</h5>
 				</div>
 				<div className='header__buttons'>
 					{auth.currentUser && auth.currentUser.token ? (

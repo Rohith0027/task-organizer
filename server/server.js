@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const taskRouter = require('./routes/taskRoutes');
 const morgan = require('morgan');
 
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -19,3 +20,4 @@ const port = 4000;
 app.listen(port, () => {
 	console.log(`server is running on port`, port);
 });
+

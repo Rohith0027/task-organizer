@@ -31,6 +31,9 @@ export const taskSlice = createSlice({
 		editTaskSuccess: (state, action) => {
 			state.TaskData = action.payload;
 		},
+		editTaskFailure: (state) => {
+			return state;
+		},
 
 		deleteSuccess: (state, action) => {
 			state.TaskData = action.payload;
@@ -49,6 +52,7 @@ export const {
 	deleteSuccess,
 	deletefail,
 	editTaskSuccess,
+	editTaskFailure,
 } = taskSlice.actions;
 
 export default taskSlice.reducer;
@@ -129,3 +133,21 @@ export const deleteItem = (id) => async (dispatch) => {
 		dispatch(deletefail());
 	}
 };
+
+export const editTask = (id, task) => async (dispatch) => {
+	const taskData = {
+		task,
+		id,
+	};
+	const response = await axios.put(`http://localhost:4000/task/edit/${id}`, taskData);
+	if (response) {
+		localStorage.setItem('task', JSON.stringify(response.data));
+
+		dispatch(editTaskSuccess(response.data));
+		toast.success('task updated successfully');
+		window.location.replace('http://localhost:5173/taskmanager');
+	} else {
+		dispatch(editTaskFailure());
+	}
+};
+

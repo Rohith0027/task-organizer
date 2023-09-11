@@ -28,7 +28,21 @@ const getAllTasks = async (req, res) => {
 	}
 };
 
-const editTask = async (req, res) => {};
+const editTask = async (req, res) => {
+	const { id, task } = req.body;
+	console.log(task);
+	console.log(id);
+
+	try {
+		let t = await Task.findById({ _id: id });
+		console.log(t);
+		t.task = task;
+		t.save();
+		return res.send(t);
+	} catch (error) {
+		return res.status(400).send('task addition failed');
+	}
+};
 
 const statusChange = async (req, res) => {
 	const { id, string } = req.body;

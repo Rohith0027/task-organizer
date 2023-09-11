@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import './listcard.scss';
-import { BiChevronLeft, BiChevronRight, BiTrash } from 'react-icons/bi';
+import { BiChevronLeft, BiChevronRight, BiEdit, BiTrash } from 'react-icons/bi';
 import { arrowClick, deleteItem } from '../../redux/taskSlice';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const ListCard = (items) => {
 	const { item } = items;
@@ -41,6 +44,7 @@ const ListCard = (items) => {
 					>
 						<BiChevronRight />
 					</button>
+					<Link to={`/EditTask/${item._id}`}><button><BiEdit/></button></Link>
 					<button onClick={handleDelete}>
 						<BiTrash />
 					</button>
