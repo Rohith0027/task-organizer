@@ -1,7 +1,7 @@
+require('../database/db');
 const cors = require('cors');
 const express = require('express');
 const app = express();
-require('../database/db');
 const authRoutes = require('./routes/authRoutes');
 const taskRouter = require('./routes/taskRoutes');
 const morgan = require('morgan');
