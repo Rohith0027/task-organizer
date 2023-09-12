@@ -2,7 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "scripts":{
+    "start": "node server.js",
+    "build": "npm install"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "email-validator": "^2.0.4",
