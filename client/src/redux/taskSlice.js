@@ -62,7 +62,7 @@ export const addTask = (task, id) => async (dispatch) => {
 		task,
 		id,
 	};
-	const response = await axios.post('http://localhost:4000/task/add', taskData);
+	const response = await axios.post('https://task-organizer-0808.onrender.com/task/add', taskData);
 	if (response) {
 		localStorage.setItem('task', JSON.stringify(response.data));
 

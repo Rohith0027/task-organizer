@@ -55,7 +55,7 @@ export const register = (user) => async (dispatch) => {
 		};
 
 		const response = await axios.post(
-			'http://localhost:4000/auth/register',
+			'https://task-organizer-0808.onrender.com/register',
 			user,
 			config
 		);
