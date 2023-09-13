@@ -63,7 +63,7 @@ export const register = (user) => async (dispatch) => {
 		if (response) {
 			dispatch(registerSuccess(response.data));
 			toast.success('register successfull');
-			history.push('/signin');
+			history.push('https://task-organizer-0808.onrender.com/signin');
 			window.location.reload();
 		} else {
 			dispatch(registerFailure());
@@ -90,7 +90,7 @@ export const signin = (user) => async (dispatch) => {
 			localStorage.setItem('auth', JSON.stringify(response.data));
 			dispatch(loginSuccess(response.data));
 
-			history.push('/dashboard');
+			history.push('https://task-organizer-0808.onrender.com/dashboard');
 			toast.success('login successfull');
 
 			window.location.reload();

@@ -145,7 +145,7 @@ export const editTask = (id, task) => async (dispatch) => {
 
 		dispatch(editTaskSuccess(response.data));
 		toast.success('task updated successfully');
-		window.location.replace('https://task-organizer-0808.onrender.com/taskmanager');
+		window.location.replace('/taskmanager');
 	} else {
 		dispatch(editTaskFailure());
 	}
