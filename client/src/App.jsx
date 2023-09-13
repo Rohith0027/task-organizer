@@ -20,15 +20,15 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route
-						path='/signin'
+						path='https://task-organizer-0808.onrender.com/signin'
 						element={!auth.currentUser ? <Signin /> : <Dashboard />}
 					/>
 					<Route
-						path='/signup'
+						path='https://task-organizer-0808.onrender.com/signup'
 						element={!auth.currentUser ? <Signup /> : <Dashboard />}
 					/>
 					<Route
-						path='/taskmanager'
+						path='https://task-organizer-0808.onrender.com/taskmanager'
 						element={
 							<RequireAuth>
 								<TaskManager />
@@ -36,14 +36,14 @@ function App() {
 						}
 					/>
 					<Route
-						path='/dashboard'
+						path='https://task-organizer-0808.onrender.com/dashboard'
 						element={
 							<RequireAuth>
 								<Dashboard />
 							</RequireAuth>
 						}
 					/>
-					<Route path='/edittask/:id' element={<EditTask />} />
+					<Route path='https://task-organizer-0808.onrender.com/edittask/:id' element={<EditTask />} />
 				</Routes>
 			</Router>
 		</div>
