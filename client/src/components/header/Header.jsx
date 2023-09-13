@@ -13,7 +13,7 @@ const Header = () => {
 		e.preventDefault();
 		dispatch(logoutSuccess());
 		localStorage.removeItem('auth');
-		history.push('/signin');
+		history.push('https://task-organizer-0808.onrender.com/signin');
 		window.location.reload();
 	};
 	return (
