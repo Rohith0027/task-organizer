@@ -20,15 +20,15 @@ function App() {
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route
-						path='signin'
+						path='/signin'
 						element={!auth.currentUser ? <Signin /> : <Dashboard />}
 					/>
 					<Route
-						path='signup'
+						path='/signup'
 						element={!auth.currentUser ? <Signup /> : <Dashboard />}
 					/>
 					<Route
-						path='taskmanager'
+						path='/taskmanager'
 						element={
 							<RequireAuth>
 								<TaskManager />
@@ -36,14 +36,14 @@ function App() {
 						}
 					/>
 					<Route
-						path='dashboard'
+						path='/dashboard'
 						element={
 							<RequireAuth>
 								<Dashboard />
 							</RequireAuth>
 						}
 					/>
-					<Route path='edittask/:id' element={<EditTask />} />
+					<Route path='/edittask/:id' element={<EditTask />} />
 				</Routes>
 			</Router>
 		</div>
